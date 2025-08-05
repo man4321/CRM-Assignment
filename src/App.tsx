@@ -1,12 +1,18 @@
-import { JSX, useState } from 'react'
-import './App.css'
+
+import { JSX } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
+import Dashboard from './components/dashboard';
+
 
 function App(): JSX.Element {
   return (
-    <div>
-      <h1>Hello React + TypeScript!</h1>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Dashboard/>} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App
