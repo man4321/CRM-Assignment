@@ -18,17 +18,6 @@ function AssignedJobsTable(): JSX.Element {
                 </div>
             </div>
             <table style={tableStyle}>
-                <thead>
-                    {/* <tr>
-                        <th style={thStyle}>Job Title</th>
-                        <th style={thStyle}>Recruiter</th>
-                        <th style={thStyle}>Assigned On</th>
-                        <th style={thStyle}>Status</th>
-                        <th style={thStyle}>Action</th>
-                        <th style={thStyle}>Files</th>
-                        <th style={thStyle}>Toggle</th>
-                    </tr> */}
-                </thead>
                 <tbody>
                     {[1, 2].map((_, idx) => (
                         <tr key={idx} style={trStyle}>

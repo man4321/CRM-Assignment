@@ -10,6 +10,32 @@ import AssignedJobsTable from './AssignedJobsTable';
 import UserDetailsGrid from './UserDetailsGrid';
 import RightSidebar from './RightSidebar';
 
+function Dashboard(): JSX.Element {
+    return (
+        <div style={layoutStyle}>
+            <Sidebar />
+            <div style={contentWrapperStyle}>
+                <TopBar />
+                <SecondHeader />
+                <div style={mainAreaStyle}>
+                    <section style={leftColStyle}>
+                        <DashboardHeader />
+                        <UserDetailsGrid />
+                        <DashboardTabs />
+                        <AssignedJobsTable />
+                    </section>
+                    <aside style={rightColStyle}>
+                        <RightSidebar />
+                    </aside>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default Dashboard;
+
+
 
 const layoutStyle: React.CSSProperties = {
     display: 'flex',
@@ -40,29 +66,3 @@ const rightColStyle: React.CSSProperties = {
     flex: 1,
     minWidth: 0,
 };
-
-
-function Dashboard(): JSX.Element {
-    return (
-        <div style={layoutStyle}>
-            <Sidebar />
-            <div style={contentWrapperStyle}>
-                <TopBar />
-                <SecondHeader />
-                <div style={mainAreaStyle}>
-                    <section style={leftColStyle}>
-                        <DashboardHeader />
-                        <UserDetailsGrid />
-                        <DashboardTabs />
-                        <AssignedJobsTable />
-                    </section>
-                    <aside style={rightColStyle}>
-                        <RightSidebar />
-                    </aside>
-                </div>
-            </div>
-        </div>
-    );
-}
-
-export default Dashboard;

@@ -42,7 +42,7 @@ function DashboardTabs(): JSX.Element {
             {tabs.map((tab, idx) => (
                 <button
                     key={tab}
-                    style={idx === 1 ? activeTabStyle : tabStyle} // 'Assigned Jobs' active
+                    style={idx === 1 ? activeTabStyle : tabStyle}
                 >
                     {tab}
                 </button>

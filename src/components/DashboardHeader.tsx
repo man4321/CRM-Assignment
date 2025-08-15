@@ -1,11 +1,17 @@
 
-import { JSX } from 'react';
-import { UserDetailsForm } from './UserDetailsForm';
+import { JSX, useState } from 'react';
+import UserDetailsForm from './UserDetailsForm';
 import useDashboardController from '../controllers/dashboardController';
+import dotsIcon from '../assets/dotsIcon.svg';
+import fireIcon from '../assets/fireIcon.svg';
+import editIcon from '../assets/editIcon.svg';
+import starIcon from '../assets/starIcon.svg';
+import EditDetailsModel from './EditDetailsModel';
+
 
 
 function DashboardHeader(): JSX.Element {
-    const { userDetails, updateUserDetails } = useDashboardController();
+    const [isEditModelOpen, setIsEditModelOpen] = useState(false);
 
     return (
         <>
@@ -26,9 +32,19 @@ function DashboardHeader(): JSX.Element {
                 <div style={actionsStyle}>
                     <button style={btnStyle}>Contact Linked</button>
                     <span style={iconRowStyle}>
-                        <button style={iconBtnStyle} title="Star">★</button>
-                        <button style={iconBtnStyle} title="Pin">📌</button>
-                        <button style={iconBtnStyle} title="More">⋯</button>
+                        <div style={iconBtnStyle}>
+                            <img src={starIcon} alt="Star Icon" />
+                        </div>
+                        <div style={iconBtnStyle}>
+                            <img src={fireIcon} alt="fire Icon" />
+                        </div>
+                        <div style={iconBtnStyle} onClick={() => setIsEditModelOpen(true)}>
+                            <img src={editIcon} alt="edit Icon" />
+                        </div>
+                        <div style={iconBtnStyle}>
+                            <img src={dotsIcon} alt="Dots Icon" />
+                        </div>
+
                     </span>
                 </div>
             </div>
@@ -37,11 +53,16 @@ function DashboardHeader(): JSX.Element {
                 <span style={contactItemStyle}>📞 +91 9021232326</span>
                 <span style={{ color: '#8395a7', fontSize: '0.95rem', marginLeft: '0.7rem' }}>Phyllis Yang &nbsp;·&nbsp; Jul 14, 2023, 4:04 pm</span>
             </div>
-            <UserDetailsForm
-                initialData={userDetails}
-                onSubmit={updateUserDetails}
-                onCancel={() => {/* handle cancel */ }}
+
+            <EditDetailsModel
+                isOpen={isEditModelOpen}
+                title='Edit User Details'
+                onClose={() => { setIsEditModelOpen(false) }}
+                children={
+                    <UserDetailsForm />
+                }
             />
+
         </>
     );
 }
@@ -53,10 +74,8 @@ const headerCardStyle: React.CSSProperties = {
     display: 'flex',
     alignItems: 'center',
     background: '#fff',
-    // borderRadius: '12px',
     boxShadow: '0 1px 4px rgba(0,0,0,0.06)',
     padding: '1.5rem 2rem',
-    // marginBottom: '1.5rem',
     borderBottom: '1px solid #e0e6ed',
     gap: '2rem',
     fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
@@ -148,11 +167,5 @@ const iconRowStyle: React.CSSProperties = {
 };
 
 const iconBtnStyle: React.CSSProperties = {
-    background: '#f5f6fa',
-    border: '1px solid #e0e6ed',
-    borderRadius: '6px',
-    padding: '0.3rem 0.6rem',
     cursor: 'pointer',
-    fontSize: '1.1rem',
-    marginLeft: '0.2rem',
 };
