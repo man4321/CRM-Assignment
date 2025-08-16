@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { UserDetailsFormData, convertDashboardDataToUserDetails } from '../models/userDetails';
 import { useAppContext } from '../store/appContext';
 
 interface DashboardData {
@@ -39,9 +38,8 @@ const useDashboardController = () => {
         fetchDashboardData();
     }, [contextUserDetails]);
 
-    const updateUserDetails = async (updatedData: UserDetailsFormData) => {
+    const updateUserDetails = async (updatedData: any) => {
         try {
-            console.log('Updating user details:', updatedData);
             const convertedData = convertDashboardData(updatedData);
             contextUpdateUserDetails(convertedData);
         } catch (err) {

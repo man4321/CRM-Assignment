@@ -1,0 +1,28 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f6fa;
+    overflow-y: hidden;
+}
+
+.contentWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.mainArea {
+    display: flex;
+    flex: 1;
+}
+
+.leftCol {
+    flex: 2;
+    min-width: 0;
+}
+
+.rightCol {
+    flex: 1;
+    min-width: 0;
+}

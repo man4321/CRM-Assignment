@@ -1,0 +1,69 @@
+.sidebar-panel {
+    background: #f5f6fa;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    padding: 1.2rem 1.2rem 0.5rem 1.2rem;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid #e0e6ed;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 0.95rem;
+}
+
+.tab-list {
+    display: flex;
+    gap: 1.2rem;
+    border-bottom: 1px solid #e0e6ed;
+    margin-bottom: 1rem;
+}
+
+.tab-btn {
+    padding: 0.5rem 0.4rem;
+    cursor: pointer;
+    color: #4066a5;
+    font-weight: 500;
+    border: none;
+    background: none;
+    border-bottom: 2px solid transparent;
+    font-size: 0.95rem;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.tab-btn.active {
+    color: #222f3e;
+    border-bottom: 2px solid #4066a5;
+}
+
+.note-card {
+    text-align: left;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    font-size: 0.94rem;
+}
+
+.note-title {
+    font-weight: 600;
+    color: #4066a5;
+    margin-bottom: 0.2rem;
+    font-size: 0.96rem;
+    text-align: left;
+}
+
+.note-meta {
+    text-align: left;
+    color: #8395a7;
+    font-size: 0.91rem;
+    margin-top: 0.4rem;
+}
+
+.note-status {
+    color: #8395a7;
+    font-weight: 400;
+    margin-left: 8px;
+}
